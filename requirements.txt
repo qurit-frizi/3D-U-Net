@@ -1,0 +1,4 @@
+PyTorch 1.6.0 
+SimpleITK 1.2.4 
+nibabel 3.1.1
+skimage 0.17.2
