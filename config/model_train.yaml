@@ -1,0 +1,22 @@
+# paths:
+path_to_data: '/data'  # input images
+path_to_pkl: '/.pkl' # pkl file with train / val splits
+path_to_save_dir: '/results'  # all results (weights, learning curves, etc) will be saved here
+
+
+train_batch_size: 1
+val_batch_size: 1
+num_workers: 2  # for example, use a number of CPU cores
+
+lr: 1e-4 #1e-4 #1e-3  # HECKTORinitial learning rate
+n_epochs: 300 # number of training epochs (300 was used in the paper)
+n_cls: 2  # number of classes to predict (background and tumor)
+in_channels: 2  # number of input modalities
+n_filters: 24  # number of filters after the input (24 was used in the paper)
+reduction: 2  # parameter controls the size of the bottleneck in SENorm layers
+
+T_0: 25  # parameter for 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts'
+eta_min: 1e-5  # parameter for 'torch.optim.lr_scheduler.CosineAnnealingWarmRestarts'
+
+# models:
+baseline: true # if `true`, U-Net will be used. Otherwise, 3D U-Net with Squeeze and Excitation will be applied.

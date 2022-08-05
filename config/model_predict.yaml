@@ -1,0 +1,26 @@
+# paths:
+path_to_data: '/data'   # directory with test images
+path_to_save_dir: '/res' #result folder
+
+
+
+
+
+ # path or paths to weights. If multiple paths provided, an ensemble of models will be used
+ 
+path_to_weights:  
+
+- '/data/home/yousefi.f/SK_data/checkpoints_lymphoma/best_model_weights_1.pt'
+
+
+
+# output:
+probs: False # if `true`, the sigmoid output will be saved. Otherwise, 0.5-threshold will be applied to get binary labels; you can change the threshold if need be
+
+# train settings:
+num_workers: 2  # 
+
+n_cls: 2  #  (background and tumor)
+in_channels: 2  # number of input modalities [PET, PET] 
+n_filters: 24  # number of filters after the input 
+reduction: 2  # parameter controls the size of the bottleneck in SENorm layers
