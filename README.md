@@ -11,3 +11,13 @@ A PyTorch implementation of 3D U-Net borrowed from the original code: (https://g
 - SimpleITK 1.2.4 (ITK 4.13)
 - nibabel 3.1.1
 - skimage 0.17.2
+
+#### Runing the model 
+Training
+```sh
+python train.py -p config/model_train.yaml
+```
+Test
+```sh
+python predict.py -p config/model_predict.yaml
+```
