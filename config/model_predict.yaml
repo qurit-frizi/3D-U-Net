@@ -18,4 +18,4 @@ n_cls: 2  #  (background and tumor)
 in_channels: 2  # number of input modalities [PET, PET] 
 n_filters: 24  # number of filters after the input 
 reduction: 2  # parameter controls the size of the bottleneck in SENorm layers
-#input_size : 256
+#output_size : 256
