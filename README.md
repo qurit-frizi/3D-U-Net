@@ -21,3 +21,13 @@ Test
 ```sh
 python predict.py -p config/model_predict.yaml
 ```
+
+### Note 
+This code does not need the input size of 144x144x144!!
+
+In the following of the code, [144, 144, 144] is the OUTPUT shape that is hard coded in the “predict.py” code and it is not for training.
+https://github.com/qurit-frizi/3D-U-Net/blob/8fcd6e1a1b73585f0416236926aa23e90c74e2fd/model/predict.py#L47
+
+If you want, you can either change the needed output shape or put it as an input in the prediction config file (model_predict.yaml) for instance: https://github.com/qurit-frizi/3D-U-Net/blob/122bb35ea7868bf40de194e93db855f5b2fc592e/config/model_predict.yaml#L21
+
+So, for the input Can be of any size as long as its dimensions are multiple of 16’s. So if you have input data with any dimension you just need to pad it to be a multiple of 16’s. For example, for the input size of 192X192X263, you only need to pad its z dimension to be in the size of 192X192X272.
